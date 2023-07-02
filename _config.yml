@@ -31,8 +31,8 @@ url: ""
 github:
   username: ChrisMcCarthyDev # change to your github username
 
-#twitter:
-#  username: twitter_username # change to your twitter username
+twitter:
+  username: mccarthy_chris1 # change to your twitter username
 
 social:
   # Change to your full name.
@@ -41,11 +41,11 @@ social:
   email: me@chrismccarthydev.uk # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    # - https://twitter.com/username # change to your twitter homepage
+    - https://www.linkedin.com/in/c-a-mccarthy
+    - https://twitter.com/mccarthy_chris1
     - https://github.com/chrismccarthydev # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
-    - https://www.linkedin.com/in/c-a-mccarthy
 
 google_site_verification: # fill in to your verification string
 
