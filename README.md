@@ -1,45 +1,38 @@
-# Chirpy Starter [![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)](https://rubygems.org/gems/jekyll-theme-chirpy) [![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]
+# chrismccarthydev.uk
 
-When installing the [**Chirpy**][chirpy] theme through [RubyGems.org][gem], Jekyll can only read files in the folders `/_data`, `/_layouts`, `/_includes`, `/_sass` and `/assets`, as well as a small part of options of the `/_config.yml` file from the theme's gem. If you have ever installed this theme gem, you can use the command `bundle info --path jekyll-theme-chirpy` to locate these files.
+Source for [chrismccarthydev.uk](https://chrismccarthydev.uk), built with [Jekyll](https://jekyllrb.com) and the
+[Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy) theme, deployed to GitHub Pages by
+[`.github/workflows/pages-deploy.yml`](.github/workflows/pages-deploy.yml) on every push to `main`.
 
-The Jekyll team claims that this is to leave the ball in the user’s court, but this also results in users not being able to enjoy the out-of-the-box experience when using feature-rich themes.
-
-To fully use all the features of **Chirpy**, you need to copy the other critical files from the theme's gem to your Jekyll site. The following is a list of targets:
+## Run locally
 
 ```shell
-.
-├── _config.yml
-├── _plugins
-├── _tabs
-└── index.html
+bundle install
+bash tools/run.sh        # serves on http://127.0.0.1:4000 with live reload
+bash tools/test.sh       # production build + htmlproofer link check
 ```
 
-To save you time, and also in case you lose some files while copying, we extract those files/configurations of the latest version of the **Chirpy** theme and the [CD][CD] workflow to here, so that you can start writing in minutes.
+No Ruby? Open the repo in the included dev container (`.devcontainer/`).
 
-## Prerequisites
+## Writing a post
 
-Follow the instructions in the [Jekyll Docs](https://jekyllrb.com/docs/installation/) to complete the installation of the basic environment. [Git](https://git-scm.com/) also needs to be installed.
+Add `_posts/YYYY-MM-DD-title.md`:
 
-## Installation
+```markdown
+---
+title: My post
+date: 2026-11-06 12:00:00 +0000
+categories: [Engineering]
+tags: [python]
+---
 
-Sign in to GitHub and [**use this template**][use-template] to generate a brand new repository and name it `USERNAME.github.io`, where `USERNAME` represents your GitHub username.
-
-Then clone it to your local machine and run:
-
+Content here.
 ```
-$ bundle
-```
 
-## Usage
+See the [Chirpy docs](https://github.com/cotes2020/jekyll-theme-chirpy/wiki) for more front-matter options.
 
-Please see the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy#documentation).
+## Theme overrides
 
-## License
-
-This work is published under [MIT][mit] License.
-
-[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
-[chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy/
-[use-template]: https://github.com/cotes2020/chirpy-starter/generate
-[CD]: https://en.wikipedia.org/wiki/Continuous_deployment
-[mit]: https://github.com/cotes2020/chirpy-starter/blob/master/LICENSE
+- `_layouts/home.html` is a copy of Chirpy 7.6.0's home layout with one addition (marked `LOCAL`): the content of
+  `index.html` is shown as an intro card above the post list. When upgrading Chirpy, re-copy the theme's
+  `home.html` and re-apply that block.
